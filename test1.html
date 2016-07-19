@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+<meta charset="UTF-8">
+
+<head>
+</head>
+
+<body>
+    <header>
+    </header>
+
+    <nav>
+    </nav>
+
+    <article>
+        <section>
+            <svg width="2000" height="2000">
+                <rect width="140" height="140" x="10" y="10" fill="lightblue" />
+                <circle cx="80" cy="80" r="60" fill="red" />
+                <circle cx="80" cy="80" r="40" fill="white" />
+                <circle cx="80" cy="80" r="20" fill="green" />
+
+                <line x1="10" y1="10" x2="200" y2="100" style="stroke:#000000; stroke-linecap:round; stroke-width:20" />
+
+                <polyline points="200 200, 250 250, 300 200" style="stroke-linejoin:miter; stroke:black; stroke-width:12; fill: none;" />
+
+                <ellipse cx="200" cy="400" rx="150" ry="70" style="fill:grey" />
+
+                <polygon points="100 100, 200 200, 300 0" style="fill: green; stroke:black;" />
+
+                <rect width="150" height="150" fill="orange">
+                    <animate attributeName="x" from="0" to="300" dur="3s" fill="freeze" repeatCount="2" />
+                </rect>
+
+                <path d="M 0 0 L200 200 L200 0 Z" style="stroke:#000;  fill:none;" />
+            </svg>
+            
+            <canvas id="myCanvas"></canvas>
+        </section>
+    </article>
+
+    <aside>
+    </aside>
+
+    <footer>
+    </footer>
+
+    <script type="text/javascript">
+        // local storage example
+        localStorage.setItem("key1", "value1");
+        console.log('key1:', localStorage.getItem("key1"));
+        localStorage.removeItem("key1");
+        localStorage.setItem("key2", JSON.stringify({
+            'a': 'a',
+            'b': 'b',
+            'c': ['a', 'b', 'c']
+        }));
+        console.log('key2:', JSON.parse(localStorage.getItem("key2")));
+        localStorage.removeItem("key2");
+        localStorage.clear();
+
+
+        // session storage example
+        sessionStorage.setItem("key1", "value1");
+        console.log('key1:', sessionStorage.getItem("key1"));
+        sessionStorage.removeItem("key1");
+        sessionStorage.setItem("key2", JSON.stringify({
+            'a': 'a',
+            'b': 'b',
+            'c': ['a', 'b', 'c']
+        }));
+        console.log('key2:', JSON.parse(sessionStorage.getItem("key2")));
+        sessionStorage.removeItem("key2");
+        sessionStorage.clear();
+
+
+        // geolocation API example
+        navigator.geolocation.getCurrentPosition(function(geoposition) {
+            console.log(geoposition);
+        });
+
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.fillStyle = ['rgba(255, 193, 85, 1)', 'rgba(15, 124, 255, 1)'];
+        ctx.fillRect(20, 20, 150, 100);
+    </script>
+</body>
+
+</html>
